@@ -113,31 +113,56 @@
           </div>
           <div class="w-2/6 flex flex-col items-start justify-start  h-fit gap-3">
             <div class="flex w-full flex-col items-start justify-start p-6 rounded-lg border border-gray-500 bg-gray-800 h-fit gap-3">
-              <button
-                type="button"
-                class="text-black bg-green-400 w-56 hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-green-900">
-                Terima Laporan
-              </button>
-              <button
-                type="button"
-                class="text-white bg-yellow-600 w-56 hover:bg-yellow-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
-                Hubungi Pelapor
-              </button>
-              <button
-                type="button"
-                class="text-white bg-blue-700 w-56 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Dampingi Pelapor
-              </button>
-              <button
-                type="button"
-                class="text-white bg-green-700 w-56 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                Laporan Selesai
-              </button>
-              <button
-                type="button"
-                class="text-white bg-red-700 w-56 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
-                Tolak Laporan
-              </button>
+              <form action="{{ route('report.update', $report->id) }}" method="post">
+              @csrf
+                <button
+                  type="submit"
+                  name="new_status"
+                  value="Laporan Diterima"
+                  class="text-black bg-green-400 w-56 hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-green-900">
+                  Terima Laporan
+                </button>
+              </form>
+              <form action="{{ route('report.update', $report->id) }}" method="post">
+                @csrf
+                <button
+                type="submit"
+                name="new_status"
+                value="Pelapor Dihubungi"
+                  class="text-white bg-yellow-600 w-56 hover:bg-yellow-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+                  Hubungi Pelapor
+                </button>
+              </form>
+              <form action="{{ route('report.update', $report->id) }}" method="post">
+                @csrf
+                <button
+                type="submit"
+                name="new_status"
+                value="Dalam Pendampingan"
+                  class="text-white bg-blue-700 w-56 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Dampingi Pelapor
+                </button>
+              </form>
+              <form action="{{ route('report.update', $report->id) }}" method="post">
+                @csrf
+                <button
+                type="submit"
+                name="new_status"
+                value="Laporan Selesai"
+                  class="text-white bg-green-700 w-56 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                  Laporan Selesai
+                </button>
+              </form>
+              <form action="{{ route('report.update', $report->id) }}" method="post">
+                @csrf
+                <button
+                type="submit"
+                name="new_status"
+                value="Laporan Ditolak"
+                  class="text-white bg-red-700 w-56 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+                  Tolak Laporan
+                </button>
+              </form>
             </div>
             <div class=" w-full flex flex-col items-start justify-start p-6 rounded-lg border border-gray-500 bg-gray-800 h-fit gap-3">
               <a

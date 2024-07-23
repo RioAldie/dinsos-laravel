@@ -1,8 +1,9 @@
+
 <x-layout>
 
     <div class="p-2 w-full flex border-2 border-gray-200 justify-between items-center rounded-md">
-        <p class="text-xl font-bold text-gray-700">Laporan</p>
-        <a href="{{ route('report.add') }}">
+        <p class="text-xl font-bold text-gray-700">Berita</p>
+        <a href="{{ route('blog.create') }}">
         <button type="button" class="focus:outline-none text-white bg-pink-600 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-pink-600 dark:hover:bg-pink-600 dark:focus:ring-pink-900">Tambah</button></a>
     </div>
     
@@ -12,19 +13,16 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Pelapor
+                    Judul 
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Kategori
+                    Penulis
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Tanggal
+                    Created_At
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Alamat
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Status
+                    Isi
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Action
@@ -32,33 +30,38 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($reports as $report)
+            @foreach ($blogs as $post)
                 <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 e border-b ">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $report['nama_pelapor'] }}
+                        {{ $post['judul'] }}
                     </th>
                     <td class="px-6 py-4">
-                        {{ $report['judul'] }}
+                        {{ $post['author'] }}
                     </td>
                     <td class="px-6 py-4">
-                        {{ $report['created_at']->diffForHumans() }}
+                        {{ $post['created_at']->diffForHumans() }}
                     </td>
                     <td class="px-6 py-4">
-                        {{ $report['alamat'] }}
-                    </td>
-                    <td class="px-2 w-36 py-4 font-bold 
-                        {{ $report['status'] == 'Laporan Ditolak' ? 'text-red-700' : 
-                        ($report['status'] == 'Dalam Tinjauan' ? 'text-yellow-400' : 'text-green-700') }}">
-                        {{ $report['status'] }}
+                        {{ $post['isi'] }}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="/reports/{{  $report['id'] }}" class="font-medium text-green-600 dark:text-green-500 hover:underline">View</a>
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        <form method="post" action="{{  route('report.delete',$report->id) }}">
+                        @if($post->image_path)
+                        <img src="{{ asset('storage/' . $post->image_path) }}" alt="post Image" style="max-width: 100%;" class="w-20 h-20">
+                    @endif
+                    </td>
+                    
+                    <td class="px-6 py-4">
+                      
+                        <a href="{{ route('blog.edit', $post->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <form action="{{ route('blog.destroy', $post->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
                             @csrf
-                            <button class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</button>
+                            @method('DELETE')
+                            <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                Hapus
+                            </button>
                         </form>
                     </td>
+                  
                 </tr>
             @endforeach
            

@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('judul');
-            $table->string('lokasi');
-            $table->string('waktu');
-            $table->string('date');
-            $table->string('peserta');
-            $table->boolean('isActive')->default((1));
+            $table->string('isi');
+            $table->string('author');
+            $table->string('image_path')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('blogs');
     }
 };

@@ -50,8 +50,13 @@
                         {{ $event['date'] }}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="{{ route('event.edit') }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                        {{-- {{ dump($event->id) }} --}}
+                        <a href="{{ route('event.edit', $event->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <form method="post" action="{{  route('event.delete',$event->id) }}">
+                            @csrf
+                            <button class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</button>
+                        </form>
+                        
                     </td>
                   
                 </tr>

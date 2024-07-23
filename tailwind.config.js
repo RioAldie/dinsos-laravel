@@ -4,9 +4,16 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./node_modules/flowbite/**/*.js",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                primary: "var(--color-primary)",
+                secondary: "var(--color-secondary)",
+                accent: "var(--color-accent)",
+            },
+        },
     },
-    plugins: [],
+    plugins: [require("flowbite/plugin")],
 };

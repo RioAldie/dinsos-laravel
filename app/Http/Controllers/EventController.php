@@ -27,7 +27,35 @@ class EventController extends Controller
 
     return redirect()->route('events.show');
    }
-   function edit(){
-    return view('event.edit');
+   function edit($id){
+     // Tambahkan ini untuk memeriksa nilai dari $id
+    $event = Event::find($id);
+
+    if (!$event) {
+        return redirect()->route('events.show')->with('error', 'Event not found.');
+    }
+
+    return view('event.edit', compact('event'));
+   }
+   function update(Request $request, $id){
+    $event = Event::find($id);
+
+    $event->judul = $request->judul;
+    $event->lokasi = $request->lokasi;
+    $event->peserta = $request->peserta;
+    $event->date = $request->date;
+    $event->waktu = $request->waktu;
+    $event->isActive = 1;
+    $event->update();
+
+    return redirect()->route('events.show');
+   }
+
+   function delete($id){
+    $event = Event::find($id);
+
+    $event->delete();
+
+    return redirect()->route('events.show');
    }
 }
