@@ -11,10 +11,10 @@
 <body >
     
  <x-appbar></x-appbar>
- <main>  
+ <main >  
       {{ $slot }}
-</main>
- 
+ </main>
+ <x-footer/>
 </body>
 
 </html>
