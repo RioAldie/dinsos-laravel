@@ -1,9 +1,9 @@
 <x-layout>
     <div class="text-white flex  flex-col gap-5 ">
-        <div class="w-full flex flex-row items-center justify-between p-6 rounded-lg border border-gray-500 bg-gray-800">
+        <div class="w-full flex flex-row items-center justify-between p-6 rounded-lg border  bg-primary text-xl">
           Detail Laporan
         </div>
-        <div class=" w-full border flex flex-row gap-6">
+        <div class=" w-full flex flex-row gap-6">
           <div class="w-full flex flex-col items-start justify-start p-6 rounded-lg border border-gray-200 gap-6 bg-gray-50 ">
             <div class="w-full  flex flex-row justify-start h-10 gap-16">
               <p class=" text-gray-800 w-56 border-b-2 border-gray-200 font-bold">
@@ -112,14 +112,17 @@
             </div>
           </div>
           <div class="w-2/6 flex flex-col items-start justify-start  h-fit gap-3">
-            <div class="flex w-full flex-col items-start justify-start p-6 rounded-lg border border-gray-500 bg-gray-800 h-fit gap-3">
+            <div class="flex w-full flex-col items-center justify-start p-6 rounded-lg border border-gray-200 h-fit gap-3">
+              <div class="text-gray-400">
+                <h3 class="font-bold text-base">Tindak Lanjut:</h3>
+              </div>
               <form action="{{ route('report.update', $report->id) }}" method="post">
               @csrf
                 <button
                   type="submit"
                   name="new_status"
                   value="Laporan Diterima"
-                  class="text-black bg-green-400 w-56 hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-green-900">
+                  class="text-white bg-green-500 w-56 hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-green-900">
                   Terima Laporan
                 </button>
               </form>
@@ -129,7 +132,7 @@
                 type="submit"
                 name="new_status"
                 value="Pelapor Dihubungi"
-                  class="text-white bg-yellow-600 w-56 hover:bg-yellow-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+                  class="text-white bg-yellow-400 w-56 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
                   Hubungi Pelapor
                 </button>
               </form>
@@ -164,21 +167,21 @@
                 </button>
               </form>
             </div>
-            <div class=" w-full flex flex-col items-start justify-start p-6 rounded-lg border border-gray-500 bg-gray-800 h-fit gap-3">
-              <a
-                >
+            <div class=" w-full flex flex-col items-center justify-start p-6 rounded-lg border border-gray-200 h-fit gap-3">
+              <div class="text-gray-400">
+                <h3 class="font-bold text-base">Hubungi Pelapor:</h3>
+              </div>
+              <a href="https://wa.me/089666179869">
                 <button
                   type="button"
                   class="text-white w-64 bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex gap-2 items-center me-2 mb-2">
-                
                   Hubungi Lewat Whatsapp
                 </button>
               </a>
-              <a>
+              <a href="mailto:{{ $report->email }}">
                 <button
                   type="button"
-                  class="text-white w-64 bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex gap-2 items-center me-2 mb-2">
-                
+                  class="text-white w-64 bg-red-600 hover:bg-orange-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex gap-2 items-center me-2 mb-2">
                   Hubungi Lewat Email
                 </button>
               </a>

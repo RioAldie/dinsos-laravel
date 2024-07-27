@@ -90,4 +90,7 @@ class BlogController extends Controller
 
         return redirect()->route('blog.index')->with('success', 'Blog post deleted successfully.');
     }
+    public function show(){
+        return view('blog.blogpost');
+    }
 }

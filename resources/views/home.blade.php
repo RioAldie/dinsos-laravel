@@ -11,7 +11,8 @@
                     <p class="text-[18px] font-sans mt-[5px] w-[80%] sm:w-[90%] lg:w-[600px] max-h-[101px]   leading-[27px] font-normal">
                       Ayo laporkan aduanmu kepada dinsos PPPA Nganjuk secara langsung dimanapun kamu berada.
                     </p>
-                    <button type="button" class="text-primary bg-white w-56 hover:bg-accent hover:text-white focus:ring-4 focus:ring-accent mt-4 border-8 border-accent font-bold text-sm px-10 py-3 ">Buat Pengaduan</button>
+                    <a href="{{ route('lapor.index') }}">
+                    <button type="button" class="text-primary bg-white w-56 hover:bg-accent hover:text-white focus:ring-4 focus:ring-accent mt-4 border-8 border-accent font-bold text-sm px-10 py-3 ">Buat Pengaduan</button></a>
                   </div>
             <div class="h-full">
                 <img src="/images/thum-lapak.png" alt="thumbnail" class="w-[500px]">
@@ -180,65 +181,62 @@
                     </div>
                 </div>
             </div>
-                <div class="min-w-[50%] mt-[100px] flex flex-col gap-[30px] items-center py-[20px]">
-                    <div class="w-[80%]">
-                    <p class="text-[26px] leading-[39px] font-semibold text-[#DE002C]">
-                        Layanan
-                    </p>
-                    <p class="text-[18px] leading-[24px] font-medium mt-[20px]">
-                        Tindak Lanjut bagi Korban Kekerasan terhadap perempuan dan anak 
-                        <span class="font-semibold">(KTPA)</span>
-                    </p>
-                    </div>
-                    <div class="relative w-[320px] h-[690px]">
-                    <div class="absolute w-[300px] h-[658px] bg-[#FF0032] ml-[30px] flex flex-col items-start justify-evenly z-[30]">
-                        <!-- Map over dataService and render CardService here -->
-                        <!-- Example static content -->
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>1</p>
-                            <p>Rujukan Langsung</p>
+                    <div class="min-w-[50%] mt-[100px] flex justify-center items-center flex-col gap-[30px] py-[20px]">
+                        <div class="w-fit p-2">
+                            <p class="text-[26px] leading-[39px] font-semibold text-[#DE002C] text-center">
+                                Layanan
+                            </p>
+                            <p class="text-[18px] leading-[24px] font-medium mt-[20px] text-center">
+                                Tindak Lanjut bagi Korban Kekerasan terhadap perempuan dan anak 
+                                <span class="font-semibold">(KTPA)</span>
+                            </p>
                         </div>
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>2</p>
-                            <p>Pendampingan</p>
+                        <div class="relative w-[320px] h-[690px]">
+                        <div class="absolute w-[300px] h-[658px] bg-[#FF0032] ml-[30px] flex flex-col items-start justify-evenly z-[30]">
+                            <!-- Map over dataService and render CardService here -->
+                            <!-- Example static content -->
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>1</p>
+                                <p>Rujukan Langsung</p>
+                            </div>
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>2</p>
+                                <p>Pendampingan</p>
+                            </div>
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>3</p>
+                                <p>Penjangkauan</p>
+                            </div>
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>4</p>
+                                <p>Mediasi</p>
+                            </div>
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>5</p>
+                                <p>Bantuan Hukum</p>
+                            </div>
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>6</p>
+                                <p>Psikososial</p>
+                            </div>
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>7</p>
+                                <p>Rehabilitasi</p>
+                            </div>
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>8</p>
+                                <p>Bantuan Medis</p>
+                            </div>
+                            <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
+                                <p>9</p>
+                                <p>Konseling Keluarga</p>
+                            </div>
                         </div>
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>3</p>
-                            <p>Penjangkauan</p>
+                        <div class="absolute w-[300px] h-[658px] bg-[#F56C87] mt-[15px] ml-[15px] z-[20]"></div>
+                        <div class="absolute w-[300px] h-[658px] bg-[#FFC2CE] mt-[30px]">
+                            
                         </div>
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>4</p>
-                            <p>Mediasi</p>
-                        </div>
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>5</p>
-                            <p>Bantuan Hukum</p>
-                        </div>
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>6</p>
-                            <p>Psikososial</p>
-                        </div>
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>7</p>
-                            <p>Rehabilitasi</p>
-                        </div>
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>8</p>
-                            <p>Bantuan Medis</p>
-                        </div>
-                        <div class="flex flex-row w-full justify-start gap-5 text-white font-medium text-xl ml-8">
-                            <p>9</p>
-                            <p>Konseling Keluarga</p>
-                        </div>
-                    </div>
-                    <div class="absolute w-[300px] h-[658px] bg-[#F56C87] mt-[15px] ml-[15px] z-[20]"></div>
-                    <div class="absolute w-[300px] h-[658px] bg-[#FFC2CE] mt-[30px]">
-                        
                     </div>
                 </div>
-            </div>
-             <div class="w-full flex justify-center mt-20">
-                <img src="images/STOP_KEKERASAN.jpg" />
-            </div>
         </section>
 </x-client-layout>

@@ -7,6 +7,7 @@
     <title>Admin</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
 </head>
 <body >
     

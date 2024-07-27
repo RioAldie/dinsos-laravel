@@ -48,6 +48,11 @@ Route::get('/blogs', function () {
 Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
 Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blogpost', [BlogController::class, 'show'])->name('blog.post');
 Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
 Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blog.update');
 Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+
+Route::get('/pengaduan', function () {
+    return view('lapor');
+})->name('lapor.index');

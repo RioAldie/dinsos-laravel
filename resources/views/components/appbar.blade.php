@@ -1,6 +1,6 @@
 <nav class="bg-primary text-white border-b-4 border-red-700 ">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/icons/lapak-logo-3.svg" class="h-20" alt="Flowbite Logo" />
       </a>
       <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-default" aria-expanded="false">

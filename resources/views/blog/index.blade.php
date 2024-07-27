@@ -4,7 +4,7 @@
     <div class="p-2 w-full flex border-2 border-gray-200 justify-between items-center rounded-md">
         <p class="text-xl font-bold text-gray-700">Berita</p>
         <a href="{{ route('blog.create') }}">
-        <button type="button" class="focus:outline-none text-white bg-pink-600 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-pink-600 dark:hover:bg-pink-600 dark:focus:ring-pink-900">Tambah</button></a>
+        <button type="button" class="focus:outline-none text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  ">Tambah</button></a>
     </div>
     
 
@@ -22,7 +22,7 @@
                     Created_At
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Isi
+                    Photo
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Action
@@ -42,21 +42,17 @@
                         {{ $post['created_at']->diffForHumans() }}
                     </td>
                     <td class="px-6 py-4">
-                        {{ $post['isi'] }}
-                    </td>
-                    <td class="px-6 py-4">
                         @if($post->image_path)
                         <img src="{{ asset('storage/' . $post->image_path) }}" alt="post Image" style="max-width: 100%;" class="w-20 h-20">
                     @endif
                     </td>
                     
-                    <td class="px-6 py-4">
-                      
-                        <a href="{{ route('blog.edit', $post->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <td class="px-6 py-4 flex flex-row gap-2">
+                        <a href="{{ route('blog.edit', $post->id) }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Edit</a>
                         <form action="{{ route('blog.destroy', $post->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                            <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">
                                 Hapus
                             </button>
                         </form>

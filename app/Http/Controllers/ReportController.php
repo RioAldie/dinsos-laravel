@@ -47,7 +47,10 @@ class ReportController extends Controller
         $report->email = $request->email;
         $report->save();
     
-        return redirect()->route('report.index');
+        // return redirect()->route('report.index');
+        session()->flash('status', 'Report submitted successfully!');
+
+        return redirect()->back();
     }
     function update(Request $request, $id){
         $report = Report::find($id);
